@@ -7,3 +7,5 @@ Pair 2: Magic
 Pair 3: Output
     1. Orion
     2. Jonas
+
+Pair 1 outputs preference variables to Pair 3 and a string of contents to Pair 2. Everyone makes the loop work.
