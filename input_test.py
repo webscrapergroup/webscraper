@@ -11,6 +11,7 @@ args = parser.parse_args()
 
 duration = args.duration
 
+url = input("Url to monitor:")
 secs = input("Number of seconds between checks:")
 phoneTo = input("Phone number to text to:)
 phoneFrom = input("Twilio phone number to text from:")
