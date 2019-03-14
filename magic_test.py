@@ -1,6 +1,6 @@
 
-x = "jknv qwdklb alkwjef aljfln sdfnklsjnal aglwkgn asdfkjbadjhbjw ads alkjsfba ad kljabfk afhbawblkf afhblsbdaflkjk awlkjfbklwabfkjln awfkljbwablk"
-y = "jknv qwdulb alkwjef aljfln sdfnklsjnal mglwkgm asdfkjtadjhbjw ads alkjsfba ad kljabmk afhbawbokf afiblsbdajlnjk nwlkjfbklwabfkjln awfoojbwablk"
+x = "jknv qwdklb alkwjef aljfln sdfnklsjnal aglwkgn asdfkjbadzhbjw ads alkjsfba aq kljabfk afhbawblkf afhblsbdaflkjk awlkjfbklwabfkjln awfkljbw"
+y = "jknv qwdulb alkwjef aljfln sdfnklsjnal mglwkgm asdfkjtadjhbjw ads alkjsfba ad kljabmk afhbawbokf afiblsbdajlnjk nwlkjfbklwabfkjln awfoojbw"
 x_segment = x[50:100]
 y_segment = y[50:100]
 # print(x)
@@ -27,5 +27,6 @@ y_segment = y[50:100]
 # # regex_test = re.findall("^+$", differences)
 # # print(regex_test)
 
+# Magical - use this for everything
 count = sum(1 for a, b in zip(x_segment, y_segment) if a != b)
 print(str(count) + " changes")
