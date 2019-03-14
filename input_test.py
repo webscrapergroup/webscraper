@@ -15,11 +15,19 @@ quote_page = https://github.com/webscrapergroup/webscraper
           </a>
         </li>
        page = requests.get(url)
-     tree = html.fromstring(page.content)
-    soup = BeautifulSoup()
+def tag_from_html(body):
+    soup = BeautifulSoup(page.content, 'html.parser')
+    inner_text = soup.find("div", id="commits").content
+    page.status_code = 200
+    texts = soup.findAll(text=True)
+    visible_texts = filter(tag_visible, texts)
     #references to go back to:
     #https://docs.python-guide.org/scenarios/scrape/
     #https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+    #https://blog.hartleybrody.com/web-scraping-cheat-sheet/
+    #https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
+    #https://blog.hartleybrody.com/web-scraping-cheat-sheet/#extracting-content-from-html
+
 x = "jknv qwdklb alkwjef aljfln sdfnklsjnal aglwkgn asdfkjbadjhbjw ads alkjsfba ad kljabfk afhbawblkf afhblsbdaflkjk awlkjfbklwabfkjln awfkljbwablk"
 y = "jknv qwdulb alkwjef aljfln sdfnklsjnal aglwkgm asdfkjbadjhbjw ads alkjsfba ad kljabfk afhbawblkf afhblsbdajlkjk awlkjfbklwabfkjln awfoojbwablk"
 x_segment = x[50:100]
