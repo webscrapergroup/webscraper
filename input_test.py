@@ -14,8 +14,8 @@ duration = args.duration
 
 url = input("Url to monitor:")
 secs = input("Number of seconds between checks:")
-phoneTo = input("Phone number to text to:)
-phoneFrom = input("Twilio phone number to text from:")
+phone_to = input("Phone number to text to:)
+phone_from = input("Twilio phone number to text from:")
 account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
 
