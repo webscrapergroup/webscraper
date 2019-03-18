@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from twilio.rest import Client
 import time
 import argparse
-import html2text
 
 parser = argparse.ArgumentParser(description='Monitor a webpage.')
 parser.add_argument('--dur', dest='duration', default=-1, type=float, help='(optional) add a duration after which to automatically stop checking')
