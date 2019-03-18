@@ -3,21 +3,19 @@ from bs4 import BeautifulSoup
 from twilio.rest import Client
 import time
 import argparse
+import html2text
 
 parser = argparse.ArgumentParser(description='Monitor a webpage.')
 parser.add_argument('--dur', dest='duration', default=-1, type=float, help='(optional) add a duration after which to automatically stop checking')
-parser.add_argument('--end', dest='user_end_after_success', default=true, type=boolean, help='(optional) set to true to end after first update detected')
-
 
 args = parser.parse_args()
 
 duration = args.duration
-user_end_after_success = args.user_end_after_success
 
 url = input("Url to monitor:")
-user_interval = input("Number of seconds between checks:")
-user_phone = input("Phone number to text to:)
-twilio_phone = input("Twilio phone number to text from:")
+secs = input("Number of seconds between checks:")
+phoneTo = input("Phone number to text to:)
+phoneFrom = input("Twilio phone number to text from:")
 account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
 
@@ -33,7 +31,10 @@ quote_page = https://github.com/webscrapergroup/webscraper
               commits
           </a>
         </li>
-       page = requests.get(url)
+       r = requests.get(url)
+       print r.status_code
+       print r.text
+       
 def tag_from_html(body):
     soup = BeautifulSoup(page.content, 'html.parser')
     inner_text = soup.find("div", id="commits").content
