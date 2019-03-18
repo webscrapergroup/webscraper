@@ -4,6 +4,23 @@ from twilio.rest import Client
 import time
 import argparse
 import html2text
+
+parser = argparse.ArgumentParser(description='Monitor a webpage.')
+parser.add_argument('--dur', dest='duration', default=-1, type=float, help='(optional) add a duration after which to automatically stop checking')
+
+args = parser.parse_args()
+
+duration = args.duration
+
+url = input("Url to monitor:")
+secs = input("Number of seconds between checks:")
+phoneTo = input("Phone number to text to:)
+phoneFrom = input("Twilio phone number to text from:")
+account_sid = input("Twilio Account SID:")
+auth_token = input("Twilio Auth Token:")
+
+
+
 quote_page = https://github.com/webscrapergroup/webscraper
 <li class="commits">
           <a data-pjax="" href="/webscrapergroup/webscraper/commits/master">
