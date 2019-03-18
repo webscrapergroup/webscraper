@@ -6,15 +6,18 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Monitor a webpage.')
 parser.add_argument('--dur', dest='duration', default=-1, type=float, help='(optional) add a duration after which to automatically stop checking')
+parser.add_argument('--end', dest='user_end_after_success', default=true, type=boolean, help='(optional) set to true to end after first update detected')
+
 
 args = parser.parse_args()
 
 duration = args.duration
+user_end_after_success = args.user_end_after_success
 
 url = input("Url to monitor:")
-secs = input("Number of seconds between checks:")
-phone_to = input("Phone number to text to:)
-phone_from = input("Twilio phone number to text from:")
+user_interval = input("Number of seconds between checks:")
+user_phone = input("Phone number to text to:)
+twilio_phone = input("Twilio phone number to text from:")
 account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
 
