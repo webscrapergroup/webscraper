@@ -13,3 +13,6 @@
 #     2. client_num
 #     3. account_sid
 #     4. auth_token
+#     5. user_interval
+#     6. user_end_after_success
+#     7. user_max_checks
