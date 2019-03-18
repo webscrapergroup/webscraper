@@ -19,7 +19,7 @@ phoneFrom = input("Twilio phone number to text from:")
 account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
 
-
+client = Client(account_sid, auth_token)
 
 quote_page = https://github.com/webscrapergroup/webscraper
 <li class="commits">
