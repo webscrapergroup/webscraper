@@ -4,17 +4,17 @@ from input import get_page_contents, user_interval, user_max_checks, user_tolera
 send_text = False
 check_count = 0
 
-contents_old = get_page_contents()
-
 while check_count < user_max_checks:
+    contents_old = get_page_contents()
     time.sleep(user_interval)
     contents_new = get_page_contents()
     check_count += 1
-    
     differences_count = sum(1 for a, b in zip(contents_old, contents_new) if a != b)
     if(differences_count >= user_tolerance):
         send_text = True
         if(user_end_after_success == True):
             break
-            
-    contents_old = contents_new
+        else:
+            continue
+    else:
+        continue
