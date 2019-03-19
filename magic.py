@@ -1,4 +1,3 @@
-
 import time
 from input import get_page_contents, user_interval, user_max_checks, user_tolerance, user_end_after_success
 # count = sum(1 for a, b in zip(text_old, text_new) if a != b)
