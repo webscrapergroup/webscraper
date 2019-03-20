@@ -10,7 +10,7 @@
 # Things needed by output.py:
 # 1. Variables:
 #     1. twilio_num
-#     2. client_num
+#     2. user_num
 #     3. account_sid
 #     4. auth_token
 #     5. user_interval
