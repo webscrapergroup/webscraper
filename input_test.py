@@ -31,9 +31,17 @@ quote_page = https://github.com/webscrapergroup/webscraper
               commits
           </a>
         </li>
+      
+       <span class="num text-emphasized">
+                47
+              </span>         
        r = requests.get(url)
        print r.status_code
        print r.text
+       page = urllib2.urlopen(quote_page)
+       name_box = soup.find('h1', attrs={'class': 'name'})
+       name = name_box.text.strip() 
+                print name
        
 def tag_from_html(body):
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -47,6 +55,8 @@ def tag_from_html(body):
     #https://blog.hartleybrody.com/web-scraping-cheat-sheet/
     #https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
     #https://blog.hartleybrody.com/web-scraping-cheat-sheet/#extracting-content-from-html
+    #https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+    #https://codeburst.io/web-scraping-101-with-python-beautiful-soup-bb617be1f486
 
 x = "jknv qwdklb alkwjef aljfln sdfnklsjnal aglwkgn asdfkjbadjhbjw ads alkjsfba ad kljabfk afhbawblkf afhblsbdaflkjk awlkjfbklwabfkjln awfkljbwablk"
 y = "jknv qwdulb alkwjef aljfln sdfnklsjnal aglwkgm asdfkjbadjhbjw ads alkjsfba ad kljabfk afhbawblkf afhblsbdajlkjk awlkjfbklwabfkjln awfoojbwablk"
