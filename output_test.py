@@ -5,12 +5,7 @@ import time
 import argparse
 
 from magic import send_text
-from input import client
-from input import user_end_after_success
-from input import duration
-from input import user_interval
-from input import twilio_phone
-from input import user_phone
+from input import client, user_end_after_success, duration, user_interval, twilio_phone, user_phone
 
 def found_change():
     if(send_text == True):
