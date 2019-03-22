@@ -10,7 +10,7 @@ while (check_count < user_max_checks) and ((user_interval*check_count/60) < user
     contents_new = get_page_contents()
     check_count += 1
     differences_count = sum(1 for a, b in zip(contents_old, contents_new) if a != b)
-    if(differences_count >= user_tolerance):
+    if(differences_count >= user_tolerance or (abs(len(contents_old)) - len(contents_new)) > user_tolerance):
         send_text = True
         if(user_end_after_success == True):
             break
