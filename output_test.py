@@ -5,10 +5,12 @@ import time
 import argparse
 
 from magic import send_text
+
 # specific variable names still needed?
 from input import (
     client,
     user_end_after_success,
+    user_max_checks,
     user_duration,
     user_interval,
     twilio_phone,
@@ -19,6 +21,9 @@ from input import (
 change_detected = "We have detected a change!"
 change_not_detected = "We did not detect a change."
 
+# The number of successful checks so far
+user_num_checks = 0
+
 
 def found_change():
     if send_text == True:
@@ -27,10 +32,15 @@ def found_change():
         print(change_detected)
         # If the user decides to have the program continue running, program sleeps and then runs again
         if user_end_after_success == False:
-            time.sleep(user_interval)
-            found_change()
+            user_num_checks += 1
+            # Checks if program has reached the maximum checks
+            if user_num_checks != user_max_checks:
+                time.sleep(user_interval)
+                found_change()
+            else:
+                break
         else:
-            continue
+            break
         # Only terminal message for if not text message
     else:
         print(change_detected)
@@ -45,10 +55,15 @@ def no_change():
         print(change_not_detected)
         # If the user decides to have the program continue running, program sleeps and then runs again
         if user_end_after_success == False:
-            time.sleep(user_interval)
-            found_change()
+            user_num_checks += 1
+            # Checks if program has reached the maximum checks
+            if user_num_checks != user_max_checks:
+                time.sleep(user_interval)
+                no_change()
+            else:
+                break
         else:
-            continue
+            break
         # Only terminal message instead of text message
     else:
         print(change_not_detected)
