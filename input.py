@@ -8,6 +8,7 @@
 #     3. user_tolerance
 #     4. user_end_after_success
 #     5. user_duration
+#     6. user_infinite (go forever, no limit to time or checks)
 # Things needed by output.py:
 # 1. Variables:
 #     1. twilio_num
