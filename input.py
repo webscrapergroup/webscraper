@@ -3,12 +3,13 @@
 # 1. Functions:
 #     1. get_page_contents
 # 2. variables:
-#     1. user_interval
-#     2. user_max_checks
-#     3. user_tolerance
-#     4. user_end_after_success
-#     5. user_duration
-#     6. user_infinite (go forever, no limit to time or checks)
+#     1. user_interval (int - time (seconds) between checks)
+#     2. user_tolerance (int - max number of acceptable differences)
+#     3. user_end_after_success (boolean - stop process after a change has been found)
+#     4. One of the following (have these as options for user to choose from) - if user doesn't choose, output others as 0:
+#       a. user_max_checks (int - max checks before stopping)
+#       b. user_duration (int - time (minutes) before stopping process)
+#       c. user_infinite (boolean - go forever, no limit to time or checks)
 # Things needed by output.py:
 # 1. Variables:
 #     1. twilio_num

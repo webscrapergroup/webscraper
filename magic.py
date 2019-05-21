@@ -4,7 +4,7 @@ from input import get_page_contents, user_interval, user_max_checks, user_tolera
 send_text = False
 check_count = 0
 
-while ((check_count < user_max_checks) and ((user_interval*check_count/60) < user_duration)) or (user_forever == True):
+while ((check_count < user_max_checks) or ((user_interval*check_count/60) < user_duration)) or (user_forever == True):
     differences_count = 0
     contents_old = get_page_contents()
     time.sleep(user_interval)
