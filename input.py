@@ -6,7 +6,7 @@
 #     1. user_interval (int - time (seconds) between checks)
 #     2. user_tolerance (int - max number of acceptable differences)
 #     3. user_end_after_success (boolean - stop process after a change has been found)
-#     4. One of the following (have these as options for user to choose from) - if user doesn't choose, output others as 0:
+#     4. One of the following (have these as options for user to choose from - output ones not chosen as 0):
 #       a. user_max_checks (int - max checks before stopping)
 #       b. user_duration (int - time (minutes) before stopping process)
 #       c. user_infinite (boolean - go forever, no limit to time or checks)
