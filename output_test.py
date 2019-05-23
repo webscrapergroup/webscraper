@@ -38,9 +38,9 @@ def found_change():
                 time.sleep(user_interval)
                 found_change()
             else:
-                break
+                pass
         else:
-            break
+            pass
         # Only terminal message for if not text message
     else:
         print(change_detected)
@@ -61,9 +61,9 @@ def no_change():
                 time.sleep(user_interval)
                 no_change()
             else:
-                break
+                pass
         else:
-            break
+            pass
         # Only terminal message instead of text message
     else:
         print(change_not_detected)
