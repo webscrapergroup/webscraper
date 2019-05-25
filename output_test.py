@@ -23,7 +23,7 @@ time_checked = datetime.datetime.now().time()
 date_checked = datetime.datetime.now().date()
 
 # String for text messages and terminal messages
-change_detected = "We have detected a change at " + time_checked + date_checked + "!z"
+change_detected = "We have detected a change at " + time_checked + date_checked + "!"
 
 # The number of successful checks so far
 # user_num_checks = 0
