@@ -6,18 +6,29 @@ import argparse
 import html2text
 
 parser = argparse.ArgumentParser(description='Monitor a webpage.')
-parser.add_argument('--dur', dest='duration', default=-1, type=float, help='(optional) add a duration after which to automatically stop checking')
+parser.add_argument('--dur', dest='user_max_checks', default=0, type=int, help='(optional) add a certain number of checks after which to automatically stop checking')
+parser.add_argument('--dur', dest='user_duration', default=0, type=float, help='(optional) add a duration after which to automatically stop checking (in minutes)')
+parser.add_argument('--dur', dest='user_infinite', default=0, type=float, help='(optional) have the program run forever (true/false)')
 
 args = parser.parse_args()
 
-duration = args.duration
+user_max_checks = args.user_max_checks
+user_duration = args.user_duration
+user_infinite = args.user_infinite
 
 url = input("Url to monitor:")
-secs = input("Number of seconds between checks:")
-phoneTo = input("Phone number to text to:)
-phoneFrom = input("Twilio phone number to text from:")
+user_interval = input("Number of seconds between checks:")
+user_tolerance = input("Max number of acceptable differences before notification:")
+user_end_after_success = input("Stop checking after first notification? (y/n)")
+user_num = input("Phone number to text to:)
+twilio_num = input("Twilio phone number to text from:")
 account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
+
+if(user_end_after_success=="y") or (user_end_after_success=="Y"):
+                user_end_after_success = true
+else:
+                user_end_after_success = false
 
 client = Client(account_sid, auth_token)
 

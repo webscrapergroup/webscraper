@@ -1,6 +1,6 @@
 import time
-from input import get_page_contents, user_interval, user_max_checks, user_tolerance, user_end_after_success, user_duration, user_forever
-from output import found_change, time_checked, date_checked, change_detected
+from input_scraper import get_page_contents, user_interval, user_max_checks, user_tolerance, user_end_after_success, user_duration, user_forever, url
+from output import found_change, time_checked, date_checked, change_detected, 
 
 #send text while this var is true
 send_text = False
