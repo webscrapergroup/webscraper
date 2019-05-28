@@ -5,6 +5,7 @@ import time
 import argparse
 import html2text
 import datetime
+import urllib
 
 parser = argparse.ArgumentParser(description="Monitor a webpage.")
 parser.add_argument(
@@ -45,9 +46,9 @@ account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
 
 if (user_end_after_success == "y") or (user_end_after_success == "Y"):
-    user_end_after_success = true
+    user_end_after_success = True
 else:
-    user_end_after_success = false
+    user_end_after_success = False
 
 client = Client(account_sid, auth_token)
 quote_page = "https://github.com/webscrapergroup/webscraper"
