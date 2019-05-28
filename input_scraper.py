@@ -25,7 +25,7 @@ twilio_num = input("Twilio phone number to text from:")
 account_sid = input("Twilio Account SID:")
 auth_token = input("Twilio Auth Token:")
 
-if(user_end_after_success=="y")||(user_end_after_success=="Y"):
+if(user_end_after_success=="y") or (user_end_after_success=="Y"):
                 user_end_after_success = true
 else:
                 user_end_after_success = false
