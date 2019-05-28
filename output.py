@@ -7,7 +7,7 @@ import datetime
 
 from magic import send_text
 
-from input import client, user_interval, phoneFrom, phoneTo
+from input import client, user_interval, phoneFrom, phoneTo, url
 
 # Time and date checked for text message
 time_checked = datetime.datetime.now().time()
@@ -15,7 +15,7 @@ date_checked = datetime.datetime.now().date()
 
 # String for text message when successfully checked
 change_detected = (
-    "We detected a change at " + time_checked + " on " + date_checked + "!"
+    "We detected a change at " + time_checked + " on " + date_checked + " on " + url + "!"
 )
 
 # Function for when a change is found
