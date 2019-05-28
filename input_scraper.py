@@ -31,13 +31,7 @@ else:
                 user_end_after_success = false
 
 client = Client(account_sid, auth_token)
-               quote_page = http://moodle.clevelandhighschool.org/course/view.php?id=9&section=1
-
-                 <div class="card-text content mt-3" id="yui_3_17_2_1_1559078488295_115">
-            <div class="no-overflow" id="yui_3_17_2_1_1559078488295_114">Life is a solo trip, but you’ll have lots of visitors. Some of them are long-term, most aren’t.</div>
-            <div class="footer"></div>
-            
-        </div>         
+               quote_page = http://moodle.clevelandhighschool.org/course/view.php?id=9&section=1     
      
        r = requests.get(url)
        print r.status_code
@@ -49,6 +43,7 @@ client = Client(account_sid, auth_token)
        
 def tag_from_html(body):
     soup = BeautifulSoup(page.content, 'html.parser')
+    for product in soup.find_all("div", "no-overflow")
     inner_text = soup.find("div", id="yui_3_17_2_1_1559078488295_114").content
     page.status_code = 200
     texts = soup.findAll(text=True)
