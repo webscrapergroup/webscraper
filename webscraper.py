@@ -63,14 +63,14 @@ quote_page = "https://github.com/webscrapergroup/webscraper"
 def get_page_contents(url):
     page = requests.get(url)
     print(page.status_code)
-    print(page.text)
+    # print(page.text)
     soup = BeautifulSoup(page.content, "html.parser")
     name_box = soup.find("section", {"id": "inst3522"})
     # Goes 3 tags deep in HTML code of CS Moodle home page
     text_box1 = list(name_box.children)[1]
     text_box2 = list(text_box1.children)[1]
     text_box3 = list(text_box2.children)[1]
-    print(text_box3.get_text())
+    # print(text_box3.get_text())
     return text_box3.get_text()
 
 
