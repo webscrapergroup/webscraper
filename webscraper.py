@@ -1,10 +1,16 @@
+#import various libs
 import requests
+#pulls from website
 from bs4 import BeautifulSoup
+#sends texts
 from twilio.rest import Client
+#for time options
 import time
+#for parsing website data
 import argparse
 import html2text
 import datetime
+#for getting urls 
 import urllib.request
 
 # One of these is required for program to work
@@ -50,7 +56,8 @@ user_num = input("Phone number to text to: ")
 twilio_num = input("Twilio phone number to text from: ")
 account_sid = input("Twilio Account SID: ")
 auth_token = input("Twilio Auth Token: ")
-
+   
+    #checks if user wants to keep scraper running after a change is detected
 if (user_end_after_success == "y") or (user_end_after_success == "Y"):
     user_end_after_success = True
 else:
@@ -135,3 +142,4 @@ while (
             continue
     else:
         continue
+#this is the end of the code
