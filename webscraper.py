@@ -109,6 +109,7 @@ while (
     (check_count < user_max_checks)
     or ((user_interval * check_count / 60) < user_duration)
 ) or (user_infinite == True):
+    send_text = False
     # reset differences
     differences_count = 0
     # get page contents
