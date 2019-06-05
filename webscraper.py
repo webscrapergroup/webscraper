@@ -1,16 +1,21 @@
-#import various libs
+# import various libs
 import requests
-#pulls from website
+
+# pulls from website
 from bs4 import BeautifulSoup
-#sends texts
+
+# sends texts
 from twilio.rest import Client
-#for time options
+
+# for time options
 import time
-#for parsing website data
+
+# for parsing website data
 import argparse
 import html2text
 import datetime
-#for getting urls 
+
+# for getting urls
 import urllib.request
 
 # One of these is required for program to work
@@ -56,8 +61,8 @@ user_num = input("Phone number to text to: ")
 twilio_num = input("Twilio phone number to text from: ")
 account_sid = input("Twilio Account SID: ")
 auth_token = input("Twilio Auth Token: ")
-   
-    #checks if user wants to keep scraper running after a change is detected
+
+# checks if user wants to keep scraper running after a change is detected
 if (user_end_after_success == "y") or (user_end_after_success == "Y"):
     user_end_after_success = True
 else:
@@ -69,7 +74,7 @@ quote_page = "https://github.com/webscrapergroup/webscraper"
 # Function for grabbing page contents
 def get_page_contents(url):
     page = requests.get(url)
-    print(page.status_code)
+    print("Page status code: " + str(page.status_code))
     # print(page.text)
     soup = BeautifulSoup(page.content, "html.parser")
     name_box = soup.find("section", {"id": "inst3522"})
@@ -142,4 +147,4 @@ while (
             continue
     else:
         continue
-#this is the end of the code
+# this is the end of the code
